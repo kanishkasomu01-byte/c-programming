@@ -1,0 +1,55 @@
+1)
+#include<stdio.h>
+
+void myfunction(int num1, int num2){
+    printf("Addition of numbers:%d\n",num1 + num2);
+    printf("Subtraction of numbers:%d\n",num1 - num2);
+    printf("Multiplication of number:%d\n",num1 * num2);
+    printf("Division of numbers:%d\n",num1/num2);
+     printf("Modulus of numbers:%d\n",num1 % num2);
+}
+int main(){
+    myfunction(6,3);
+    
+    myfunction(56,13);
+    return 0;
+}
+
+
+Addition of numbers:9
+Subtraction of numbers:3
+Multiplication of number:18
+Division of numbers:2
+Modulus of numbers:0
+
+Addition of numbers:69
+Subtraction of numbers:43
+Multiplication of number:728
+Division of numbers:4
+Modulus of numbers:4
+
+2)
+
+#include<stdio.h>
+//global scope
+int newvar =30;
+int myfunction(int num1, int num2){
+    int newvar = 50;
+    // local scope
+    printf("%d\n", newvar);
+    return num1 + num2;
+   
+}
+int main(){
+    int value = myfunction(90,56);
+    printf("The total value is %d\n",value);
+    printf("%d \n",newvar);
+    return 0;
+}
+
+
+
+
+50
+The total value is 146
+30
