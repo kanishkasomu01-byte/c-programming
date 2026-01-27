@@ -1,0 +1,171 @@
+   1)  CALLOC
+
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+   int n,i;
+   int *array;
+   int sum = 0;
+   printf("Enter the number of element:");
+   scanf("%d",&n);
+   array = (int*) calloc(n, sizeof(int));
+   if(array == NULL){
+       printf("Memory not allocated \n");
+       return 0;
+   }
+   else{
+       printf("Memory allocated and adding a gap for each numbers\n",n);
+       for(i=0; i<n; i++) {
+           scanf ("%d",&array[i]);
+           sum +=array[i];
+       }
+       printf("The sum of all elements is: %d \n",sum);
+       free(array);
+       printf("Memory deleted successfully");
+   
+}
+    return 0;
+}
+
+
+
+
+
+  2) Dynamic memory allocation
+
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+int n,i,marks;
+int *array;
+//get length
+      printf("Enter the number of subjects:\n");
+      scanf("%d",&n);
+// memory allocation 
+   array = (int*)malloc(n*sizeof(int));
+   
+   if(array == NULL){
+       printf("Memory is not allocated\n");
+       return 0;
+   }
+   else{
+       printf("Memory allocated\n");
+   }
+   printf("Enter the subjects marks:\n");
+   for(i=0;i<n;i++){
+       scanf("%d",&array[i]);
+   }
+   printf("Subject marks are:\n");
+for (i = 0; i < n; i++) {
+    printf("Subject marks %d: %d\n", i + 1, array[i]);
+}
+
+   free(array);
+   printf("Memory deleted successfully\n");
+   return 0;
+}
+
+
+Enter the number of subjects:
+5
+Memory allocated
+Enter the subjects marks:
+78 89 98 76 88
+Subject marks are:
+Subject marks 1: 78
+Subject marks 2: 89
+Subject marks 3: 98
+Subject marks 4: 76
+Subject marks 5: 88
+Memory deleted successfully
+
+
+       3)    loop using pointer
+
+#include <stdio.h>
+
+int main() {
+    int number[5]={0,1,2,3,4};
+    int *point = numbers;
+    for(int i=0; i<5; i++) {
+        printf("%d \n", *point);
+        point++;
+    }
+
+    return 0;
+}
+output:
+0
+1
+2
+3
+4
+         
+     4) pointer
+        
+#include <stdio.h>
+
+int main() {
+    int number = 10;
+    int *point = &number;
+        printf("%d \n", number);
+        printf("%d \n", *point);
+       
+    
+
+    return 0;
+}
+
+output:
+10 
+10 
+
+  5)
+
+#include <stdio.h>
+
+int main() {
+    int number = 10;
+    int *point = &number;
+    int **secondpoint = &point;
+        printf("%d \n", number);
+        printf("%p \n", point);
+        printf("%p \n", secondpoint);
+       
+    
+
+    return 0;
+}
+
+output :
+
+10 
+0x7ffe667405b4 
+0x7ffe667405a8
+
+   6)
+
+#include <stdio.h>
+
+int main() {
+    int number = 10;
+    int *point = &number;
+    int **secondpoint = &point;
+        printf("%d \n", number);
+        printf("%p \n", point);
+        printf("%d \n",*point);
+        printf("%p \n", secondpoint);
+        printf("%d \n", **secondpoint);
+       
+    
+
+    return 0;
+}
+
+output:
+
+10 
+0x7fff6b504394 
+10 
+0x7fff6b504388 
+10 
