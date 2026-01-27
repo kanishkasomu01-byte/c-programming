@@ -1,0 +1,106 @@
+      structure in c 
+syntax:-
+  
+#include<stdio.h>
+struct structure {
+  int reg;
+  char section;
+  float cgpa;
+};
+
+int main() {
+  
+// create structure variable for the structure
+    struct structure stru1;
+    struct structure student2;
+    
+    // assiging values for structure variable
+    stru1.reg=0001;
+    stru1.section='b';
+    stru1.cgpa = 8.9;
+    
+    student2.reg = 0002;
+    //printing value
+    printf("The Reg no is: %d \n",stru1.reg);
+    printf("The section is: %d \n",stru1.section);
+    printf("The cgpa is: %d \n",stru1.cgpa);
+    
+    printf("reg no of second student: %d \n",student2.reg);
+    return 0;
+}
+
+output:-
+
+ The Reg no is: 1 
+The section is: 98 
+The cgpa is: 1071477408 
+reg no of second student: 2 
+
+
+
+problem 1: Student mark record system
+A college wants to store and display student academic details like roll number, name , and mark.
+problem statement :
+create a structure of store roll number, name, and markof a student.
+
+#include<stdio.h>
+#include<string.h>
+struct structure {
+  int rollnumber;
+  int mark;
+  char name[10];
+};
+
+int main() {
+  
+// create structure variable for the structure
+    struct structure stru1;
+    struct structure student2;
+    
+    // assiging values for structure variable
+    stru1.rollnumber=0001;
+    stru1.mark = 89;
+    strcpy(stru1.name,"kanishka");
+    
+    student2.rollnumber = 0002;
+    //printing value
+    printf("The rollnumber is: %d \n",stru1.rollnumber);
+    printf("The mark is: %d \n",stru1.mark);
+    printf("The name is :%s \n",stru1.name);
+ 
+    return 0;
+}
+ 
+output:-
+
+The rollnumber is: 1 
+The mark is: 89
+The name is :kanishka 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
