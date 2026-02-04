@@ -1,0 +1,162 @@
+#include<stdio.h>
+#include<string.h>
+
+struct Address{
+    char city[100];
+    int pincode;
+};
+struct Student{
+    int id;
+     char name[10];
+     struct Address address;
+};
+void printstudentdetails(struct Student * student){
+    printf("StudentID : %d\n",student->id);
+    printf("StudentName : %s\n",student->name);
+    printf("City : %s\n",student->address.city);
+    printf("Pincode : %d\n",student->address.pincode);
+}
+int main(){
+    struct Student student;
+    student.id = 06;
+    strcpy(student.name,"Deepa");
+    strcpy(student.address.city,"Chennimalai");
+    student.address.pincode = 638051;
+    
+    
+    printf(".........Studentdetails........\n");
+    printstudentdetails(&student);
+    return 0;
+}
+
+.........Studentdetails........
+StudentID : 6
+StudentName : Deepa
+City : Chennimalai
+Pincode : 638051
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#include<stdio.h>
+#include<stdlib.h>
+struct contact{
+    long int number;
+    struct contact *next;
+};
+int main(){
+    //storage allocation
+    struct contact *ph1 = (struct contact*)malloc(sizeof(struct contact));
+    struct contact *ph2 = (struct contact*)malloc(sizeof(struct contact));
+    struct contact *ph3 = (struct contact*)malloc(sizeof(struct contact));
+    //storing numbers
+    ph1->number = 9487606290;
+    ph2->number = 9500556890;
+    ph3->number = 9659626251;
+    //interconnection
+    ph1->next = ph2;
+    ph2->next = ph3;
+    ph3->next = NULL;
+    //pointing head
+    struct contact *head = ph1;
+    //display
+    printf("Contact:\n");
+    while(head != NULL){
+        printf("%ld ---->",head->number);
+        head = head->next;
+    }
+    printf("finish");
+    return 0;
+}
+
+
+
+Contact:
+9487606290 ---->9500556890 ---->9659626251 ---->finish.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+#include<stdio.h>
+#include<stdlib.h>
+struct rollnumber{
+    int number;
+    struct rollnumber *next;
+};
+int main(){
+    struct rollnumber *num1 = (struct rollnumber*)malloc(sizeof(struct rollnumber));
+    struct rollnumber *num2 = (struct rollnumber*)malloc(sizeof(struct rollnumber));
+    scanf("%d %d",&num1->number,&num2->number);
+    num1->next = num2;
+    num2->next = NULL;
+    
+    struct rollnumber *head = num1;
+    while(head!=NULL){
+    printf("Roll %d->",head->number);
+    head = head->next;
+    }
+    printf("NULL");
+    return 0;
+}
+
+Roll 1->Roll 2->NULL
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#include<stdio.h>
+#include<stdlib.h>
+struct callnumber{
+    int number;
+    struct callnumber *next;
+};
+int main(){
+    struct callnumber *num1 = (struct callnumber*)malloc(sizeof(struct callnumber));
+    struct callnumber *num2 = (struct callnumber*)malloc(sizeof(struct callnumber));
+    struct callnumber *num3 = (struct callnumber*)malloc(sizeof(struct callnumber));
+    scanf("%d %d %d",&num1->number,&num2->number,&num3->number);
+    num1->next = num2;
+    num2->next = num3;
+    num3->next = NULL;
+    
+    struct callnumber *head = num1;
+    while(head!=NULL){
+    printf("%d->",head->number);
+    head = head->next;
+    }
+    printf("NULL");
+    return 0;
+}
+
+
+101->102->103->NULL.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+#include<stdio.h>
+#include<stdlib.h>
+struct rollnumber{
+    int number;
+    struct rollnumber *next;
+};
+int main(){ 
+    int temp;
+    struct rollnumber *num1 = (struct rollnumber*)malloc(sizeof(struct rollnumber));
+    struct rollnumber *num2 = (struct rollnumber*)malloc(sizeof(struct rollnumber));
+    struct rollnumber *num3 = (struct rollnumber*)malloc(sizeof(struct rollnumber));
+    scanf("%d %d %d",&num1->number,&num2->number,&num3->number);
+    num3->next = num2;
+    num2->next = num1;
+    num1->next = NULL;
+    
+    struct rollnumber *head = num3;
+    while(head!=NULL){
+    printf("%d->",head->number);
+    head = head->next;
+    }
+    printf("NULL");
+    return 0;
+}
+
+
+300->200->100->NULL.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
